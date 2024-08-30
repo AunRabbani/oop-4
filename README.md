@@ -1,8 +1,9 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 #include <map>
 #include <ctime>
+#include <algorithm>
 #include <iomanip>
 
 using namespace std;
@@ -103,7 +104,7 @@ public:
     void borrowItem(Item& item) {
         if (loanHistory.size() < loanLimit) {
             item.checkOut();
-            loanHistory.push_back(item.itemID);
+            loanHistory.push_back(itemID);
         } else {
             cout << "Loan limit reached for member: " << name << endl;
         }
